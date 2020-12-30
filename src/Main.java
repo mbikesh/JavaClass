@@ -401,8 +401,7 @@ public class Main {
             System.out.print("   Score: ");
             int score = scanner.nextInt();
 
-            if (score > highestScore)
-            {
+            if (score > highestScore) {
                 highestScore = score;
                 highestScoreName = name;
             }
@@ -410,7 +409,6 @@ public class Main {
         }
 
         System.out.println("Student with the highest score: " + highestScoreName);
-
 
 
         // 26. Write a Program to reverse the given number. //123 => 321
@@ -425,58 +423,54 @@ public class Main {
         }
 
         System.out.println(reversenum);
-       // 27.	Write a Program to sum each digit of given number as well as product
+        // 27.	Write a Program to sum each digit of given number as well as product
         int forSum = 0;
-        int mult=1;
+        int mult = 1;
         int input = 12;
         while (input != 0) {
             int lastdigit = input % 10;
             forSum += lastdigit;
-            mult*=lastdigit;
+            mult *= lastdigit;
             input /= 10;
         }
 
-        System.out.println("Sum of digits of number "+forSum);
-        System.out.println("Multiplication of digits of number "+mult);
+        System.out.println("Sum of digits of number " + forSum);
+        System.out.println("Multiplication of digits of number " + mult);
 //28.
         //a)  int temp;
-                boolean isPrime = true;
-                System.out.println("Enter any number:");
-                int primenum = scanner.nextInt();
-                int i = 2;
-                while (i <= primenum / 2) {
-                    if (primenum % i == 0) {
-                        isPrime = false;
-                        break;
-                    }
-                    i++;
-                }
-                if (isPrime)
-                    System.out.println(num + " is a Prime Number");
-                else
-                    System.out.println(num + " is not a Prime Number");
+        boolean isPrime = true;
+        System.out.println("Enter any number:");
+        int primenum = scanner.nextInt();
+        int i = 2;
+        while (i <= primenum / 2) {
+            if (primenum % i == 0) {
+                isPrime = false;
+                break;
+            }
+            i++;
+        }
+        if (isPrime)
+            System.out.println(num + " is a Prime Number");
+        else
+            System.out.println(num + " is not a Prime Number");
 
 
-                //b)
+        //b)
 
-        int i6 =0;
-        int primenum2 =0;
-        String  primeNumbers1 = "";
+        int i6 = 0;
+        int primenum2 = 0;
+        String primeNumbers1 = "";
         System.out.println("Enter the value of nth number:");
         int start1 = scanner.nextInt();
 
-        for (i6 = 1; i6 <= start1; i6++)
-        {
-            int counter1=0;
-            for(primenum2 =i6; primenum2>=1; primenum2--)
-            {
-                if(i6%primenum2==0)
-                {
+        for (i6 = 1; i6 <= start1; i6++) {
+            int counter1 = 0;
+            for (primenum2 = i6; primenum2 >= 1; primenum2--) {
+                if (i6 % primenum2 == 0) {
                     counter1 = counter1 + 1;
                 }
             }
-            if (counter1 ==2)
-            {
+            if (counter1 == 2) {
                 primeNumbers1 = primeNumbers1 + i6 + " ";
             }
         }
@@ -485,25 +479,21 @@ public class Main {
 
 
         //c)
-        int i5 =0;
-        int primenum1 =0;
-        String  primeNumbers = "";
+        int i5 = 0;
+        int primenum1 = 0;
+        String primeNumbers = "";
         System.out.println("Enter the value of first number:");
         int start = scanner.nextInt();
         System.out.println("Enter second value: ");
-        int end=scanner.nextInt();
-        for (i5 = start; i5 <= end; i5++)
-        {
-            int counter=0;
-            for(primenum1 =i5; primenum1>=1; primenum1--)
-            {
-                if(i5%primenum1==0)
-                {
+        int end = scanner.nextInt();
+        for (i5 = start; i5 <= end; i5++) {
+            int counter = 0;
+            for (primenum1 = i5; primenum1 >= 1; primenum1--) {
+                if (i5 % primenum1 == 0) {
                     counter = counter + 1;
                 }
             }
-            if (counter ==2)
-            {
+            if (counter == 2) {
                 primeNumbers = primeNumbers + i5 + " ";
             }
         }
@@ -512,10 +502,9 @@ public class Main {
 
 
         //29.Write a Program for the following Mathematical.
-        double n=5;
+        double n = 5;
         double res = 0, fact = 1;
-        for (int i1 = 1; i1 <= n; i1++)
-        {
+        for (int i1 = 1; i1 <= n; i1++) {
 
             fact = fact * i1;
 
@@ -537,8 +526,58 @@ public class Main {
             number2 = sumOfTwo;
             System.out.println(sumOfTwo);
 
+        }
+        //  31.	Write a Program display following patterns.
+        for (int i2 = 1; i2 < 7; i2++) {
+            for (int k = 1; k < i2; k++) {
+                System.out.print(k);
 
-            //  31.	Write a Program display following patterns.
+            }
+            System.out.println();
+        }
+        //METHOD INITIALIZE---------------
+
+        Main main=new Main();
+        main.fibonacci(4);
+        main.pattern();
+        main.equation(4);
+
+    }
+
+    //------------------USING METHODS-------------------------------------//
+
+        //29. Mathematical equation
+
+        public void equation(double n){
+            double res = 0, fact = 1;
+            for (int i1 = 1; i1 <= n; i1++)
+            {
+
+                fact = fact * i1;
+
+                res = res + (i1 / fact);
+            }
+
+            System.out.println("Sum: " + res);
+        }
+
+
+        //30.	Write a program to print the Fibonacci series. 1 1 2 3 5 8 ….
+
+        public  void fibonacci(int count2) {
+            int number1a = 1;
+            int number2a = 0;
+            System.out.println("Fibonacci series");
+            for (int j = 1; j <= count2; j++) {
+                int sumOfTwo = number1a + number2a;
+                number1a= number2a;
+                number2a = sumOfTwo;
+                System.out.println(sumOfTwo);
+            }
+        }
+
+        //31. Pattern
+        public void pattern(){
             for(int i2=1;i2<7;i2++) {
                 for (int k = 1; k < i2; k++) {
                     System.out.print(k);
@@ -546,6 +585,6 @@ public class Main {
                 }
                 System.out.println();
             }
+
         }
     }
-}

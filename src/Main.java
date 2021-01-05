@@ -602,8 +602,6 @@ public class Main {
             sum+=array[i];
         }
         System.out.println("Sum is: "+sum);
-
-
     }
 
 

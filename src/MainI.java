@@ -5,6 +5,11 @@ public class MainI {
 
         reverseArray();
 
+        int num[]={1,2,3,4,5};
+
+        System.out.println(getMax22(num));
+
+
     }
 
     //34.	Write a program to reverse the element of an array.
@@ -27,7 +32,24 @@ public class MainI {
 
     //35.	Write a function to find the second largest number in a given array.
 
+    public static int getMax22(int[] arr){
+        int max1 = arr[0];
+        int max2 = arr[1];
+        for (int i = 0; i < arr.length; i++){
+            if (arr[i] > max2)
+            {
+                max2 = arr[i];
+            }
 
+            if (max2 > max1)
+            {
+                int temp = max1;
+                max1 = max2;
+                max2 = temp;
+            }
+        }
+        return max2;
+    }
 
 
 

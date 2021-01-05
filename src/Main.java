@@ -541,7 +541,7 @@ public class Main {
         main.fibonacci(4);
         main.pattern();
         main.equation(4);
-
+        sum();
     }
 
     //------------------USING METHODS-------------------------------------//
@@ -587,4 +587,27 @@ public class Main {
             }
 
         }
+
+//32.	Write a Program to accept 5 values in an array and display their sum.
+
+
+    public static void sum(){
+        Scanner scanner=new Scanner(System.in);
+        int array[]=new int[5];
+
+        int sum=0;
+        for(int i=0;i<array.length;i++){
+            System.out.println("Enter a number");
+            array[i]=scanner.nextInt();
+            sum+=array[i];
+        }
+        System.out.println("Sum is: "+sum);
+
+
     }
+
+
+
+    }
+
+

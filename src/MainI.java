@@ -6,9 +6,8 @@ public class MainI {
         reverseArray();
 
         int num[]={1,2,3,4,5};
-
-        System.out.println(getMax22(num));
-
+        System.out.println();
+        System.out.println(secondLargest(num));
 
     }
 
@@ -32,7 +31,7 @@ public class MainI {
 
     //35.	Write a function to find the second largest number in a given array.
 
-    public static int getMax22(int[] arr){
+    public static int secondLargest(int[] arr){
         int max1 = arr[0];
         int max2 = arr[1];
         for (int i = 0; i < arr.length; i++){

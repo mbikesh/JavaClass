@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Main {
+public class OneToThirtyTwo {
     public static void main(String[] args) {
         //1. Write a program to display Greetings in three lines.
         System.out.println("greetings");
@@ -537,10 +537,10 @@ public class Main {
         }
         //METHOD INITIALIZE---------------
 
-        Main main=new Main();
-        main.fibonacci(4);
-        main.pattern();
-        main.equation(4);
+        OneToThirtyTwo oneToThirtyTwo =new OneToThirtyTwo();
+        oneToThirtyTwo.fibonacci(4);
+        oneToThirtyTwo.pattern();
+        oneToThirtyTwo.equation(4);
         sum();
     }
 

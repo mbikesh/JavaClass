@@ -2,23 +2,23 @@ public class BankAccount {
 
     private int balance;
 
-    private int accountNumber;
+
 
     private String name;
 
-    private int accountNum=123456;
+    private int  accountNumber=123456;
     private int initialBalance;
     private int previousTransaction;
 
     public BankAccount(String name){
         this.name=name;
         this.initialBalance=0;
-        this.accountNumber=accountNum;
+        this.accountNumber=accountNumber;
     }
     public BankAccount(String name,int balance){
         this.name=name;
         this.balance=balance;
-        this.accountNumber=accountNum;
+        this.accountNumber=accountNumber;
     }
 
 
@@ -64,7 +64,7 @@ public class BankAccount {
 
 
     public void displayInfo(){
-        System.out.println("Account number is: "+this.accountNumber);
+        System.out.println("Account number is: "+accountNumber);
         System.out.println("Balance is: $"+this.balance);
 
     }

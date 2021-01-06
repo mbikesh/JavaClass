@@ -2,8 +2,6 @@ public class BankAccount {
 
     private int balance;
 
-
-
     private String name;
 
     private int  accountNumber=123456;
@@ -13,12 +11,12 @@ public class BankAccount {
     public BankAccount(String name){
         this.name=name;
         this.initialBalance=0;
-        this.accountNumber=accountNumber;
+
     }
     public BankAccount(String name,int balance){
         this.name=name;
         this.balance=balance;
-        this.accountNumber=accountNumber;
+
     }
 
 

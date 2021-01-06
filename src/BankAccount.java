@@ -6,7 +6,7 @@ public class BankAccount {
 
     private String name;
 
-    private static int accountNum=123456;
+    private int accountNum=123456;
     private int initialBalance;
     private int previousTransaction;
 
@@ -36,7 +36,7 @@ public class BankAccount {
             previousTransaction=depositAmount;
         }
 
-        double rate=2;
+        double rate=2.2;
         double totalBalance=((rate*this.balance*years)/100)+this.balance;
         System.out.println("Amount deposited is: $"+depositAmount+" and total balance after " + years+"years is: $"+totalBalance);
 
@@ -81,6 +81,7 @@ public class BankAccount {
 
     public static void main(String[] args) {
         BankAccount account=new BankAccount("First");
+        account.displayInfo();
         account.depositFunds(2000);
         account.withdraw(23);
         account.withdraw(54,23);

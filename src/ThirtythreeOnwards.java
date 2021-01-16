@@ -2,20 +2,27 @@ import java.util.Scanner;
 
 public class ThirtythreeOnwards {
     public static void main(String[] args) {
-
         reverseArray();
 
-        int num[]={1,2,3,4,5};
+        int num[] = {1, 2, 3, 4, 5};
         System.out.println();
         System.out.println(secondLargest(num));
 
-        int dupArray[]={1,2,2,4,4,5};
-        int mult[][]={{1,2,3},{4,5,6},{7,8,9}};
-        int mult2[][]={{4,5,6},{2,7,8},{3,1,9}};
-        ThirtythreeOnwards m=new ThirtythreeOnwards();
+        int dupArray[] = {1, 2, 2, 4, 4, 5};
+        int mult[][] = {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
+        int mult2[][] = {{4, 5, 6}, {2, 7, 8}, {3, 1, 9}};
+        ThirtythreeOnwards m = new ThirtythreeOnwards();
         m.findDup(dupArray);
-        m.multiDimen(mult,mult2);
+        m.multiDimen(mult, mult2);
         ascendingOrder(num);
+
+
+        palindrome("ada");
+        reverseString("abc");
+        shortForm("Ram Kishor Singh");
+        duplicateLetter("aaghhii");
+        duplicateWord("abc def ghi abc");
+        exceptionHandle(2,1);
     }
 
 
@@ -95,6 +102,9 @@ public class ThirtythreeOnwards {
             }
         }
     }
+
+   //37.Write a Program to perform for the followingtask.
+
     public void multiDimen(int mult[][],int mult2[][]){
         int rows=3, columns=3;
 
@@ -126,7 +136,105 @@ public class ThirtythreeOnwards {
             System.out.println();
         }
 
-
+        System.out.println();
     }
 
+    //38.	Write a program to check whether a given string is palindrome or not.
+
+    public static void palindrome(String c) {
+
+        String reverse="";
+
+      for(int i=c.length()-1;i>=0;i--){
+          reverse=reverse+c.charAt(i);
+      }
+
+        if(c.equals(reverse)){
+            System.out.println(c+" is palindrome");
+        }else{
+            System.out.println(c+" is not palindrome");
+        }
+
+    }
+    //39.Write a Program to display names in short form. E.g. Ram Kishore Singh  -> R. k. Singh
+    public static void shortForm(String name){
+        System.out.println("The full name is: " + name);
+        System.out.print("Initials with surname is: ");
+        int len = name.length();
+        name = name.trim();
+        String str1 = "";
+        for (int i = 0; i < len; i++) {
+            char ch = name.charAt(i);
+            if (ch != ' ') {
+                str1 = str1 + ch;
+            } else {
+                System.out.print(Character.toUpperCase(str1.charAt(0)) + ". ");
+                str1 = "";
+            }
+        }
+        String str2 = "";
+        for (int j = 0; j < str1.length(); j++) {
+            if (j == 0)
+                str2 = str2 + Character.toUpperCase(str1.charAt(0));
+            else
+                str2 = str2 + Character.toLowerCase(str1.charAt(j));
+        }
+        System.out.println(str2);
+    }
+
+    //40.	Write a program to reverse the string.
+
+    public static void reverseString(String rev){
+
+        String rev1="";
+
+        for(int i=rev.length()-1;i<=0;i--){
+            rev1=rev1+rev.charAt(i);
+        }
+        System.out.println("Reverse of"+ rev+"  is: "+rev1);
+    }
+    //41.	Write a program to find the duplicate letter in a word.
+    public static void duplicateLetter(String duplicateWord) {
+        char[] dup = duplicateWord.toCharArray();
+        for (int i = 0; i < dup.length; i++) {
+            for (int j = i + 1; j < dup.length; j++) {
+                if (dup[i] == dup[j]) {
+                    System.out.print(dup[j]);
+                }
+            }
+
+        }
+        System.out.println();
+    }
+ // 42.	Write a program to find the duplicate word from a long string.
+    public static void duplicateWord(String sentence) {
+        int count;
+        String[] sen = sentence.split("");
+
+        for (int i = 0; i <= sen.length; i++) {
+            count = 1;
+            for (int j = i + 1; j < sen.length; j++) {
+                if (sen[i].equals(sen[j])) {
+                    count++;
+                    sen[j] = "0";
+                }
+            }
+            if (count > 1 && sen[i] != "0")
+                System.out.print(sen[i]);
+        }
+    }
+
+    //43.	Write a program to trap the exception handling to trap the divided by zero and out of index value in array.
+
+    public static void exceptionHandle(int a, int b){
+        int[] arr =new int[3];
+
+        try{
+            int div=a/b;
+            arr[3]=div;
+            System.out.println(div);
+        }catch (Exception e){
+            System.out.println(e);
+        }
+    }
 }

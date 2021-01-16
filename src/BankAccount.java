@@ -4,7 +4,7 @@ public class BankAccount {
 
     private String name;
 
-    private int  accountNumber=123456;
+    private static int  accountNumber=123456;
     private int initialBalance;
     private int previousTransaction;
 

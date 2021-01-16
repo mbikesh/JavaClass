@@ -2,6 +2,7 @@ import java.util.Scanner;
 
 public class OneToThirtyTwo {
     public static void main(String[] args) {
+
         //1. Write a program to display Greetings in three lines.
         System.out.println("greetings");
 
@@ -535,16 +536,16 @@ public class OneToThirtyTwo {
             }
             System.out.println();
         }
-        //METHOD INITIALIZE---------------
+
 
         OneToThirtyTwo oneToThirtyTwo =new OneToThirtyTwo();
         oneToThirtyTwo.fibonacci(4);
         oneToThirtyTwo.pattern();
         oneToThirtyTwo.equation(4);
         sum();
+
     }
 
-    //------------------USING METHODS-------------------------------------//
 
         //29. Mathematical equation
 
@@ -564,7 +565,7 @@ public class OneToThirtyTwo {
 
         //30.	Write a program to print the Fibonacci series. 1 1 2 3 5 8 ….
 
-        public  void fibonacci(int count2) {
+        public  static void fibonacci(int count2) {
             int number1a = 1;
             int number2a = 0;
             System.out.println("Fibonacci series");

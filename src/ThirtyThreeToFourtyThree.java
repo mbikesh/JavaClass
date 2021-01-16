@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class ThirtythreeOnwards {
+public class ThirtyThreeToFourtyThree {
     public static void main(String[] args) {
         reverseArray();
 
@@ -11,7 +11,7 @@ public class ThirtythreeOnwards {
         int dupArray[] = {1, 2, 2, 4, 4, 5};
         int mult[][] = {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
         int mult2[][] = {{4, 5, 6}, {2, 7, 8}, {3, 1, 9}};
-        ThirtythreeOnwards m = new ThirtythreeOnwards();
+        ThirtyThreeToFourtyThree m = new ThirtyThreeToFourtyThree();
         m.findDup(dupArray);
         m.multiDimen(mult, mult2);
         ascendingOrder(num);

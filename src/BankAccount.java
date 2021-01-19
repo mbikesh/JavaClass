@@ -4,19 +4,19 @@ public class BankAccount {
 
     private String name;
 
-    private static int  accountNumber=123456;
+    static int  accountNumber=1234;
     private int initialBalance;
     private int previousTransaction;
 
     public BankAccount(String name){
         this.name=name;
         this.initialBalance=0;
-
+        accountNumber++;
     }
     public BankAccount(String name,int balance){
         this.name=name;
         this.balance=balance;
-
+        accountNumber++;
     }
 
 
@@ -76,18 +76,5 @@ public class BankAccount {
 
     }
 
-
-    public static void main(String[] args) {
-        BankAccount account=new BankAccount("First");
-        account.displayInfo();
-        account.depositFunds(2000);
-        account.withdraw(23);
-        account.withdraw(54,23);
-        account.depositFunds(400,4);
-        account.previousTransaction();
-        System.out.println();
-
-        BankAccount account1=new BankAccount("Second",2000);
-        account1.displayInfo();
-    }
+  
 }

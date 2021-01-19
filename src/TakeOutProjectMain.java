@@ -10,6 +10,7 @@ public class TakeOutProjectMain {
             System.out.println("Enter choice: \n1. Italian Food Menu\n2. Chinese Food Menu\n3. American Food Menu");
             choice= scanner.nextInt();
 
+
             switch (choice){
                 case 1:
                     takeOutProject.displayItalianFoodMenu();

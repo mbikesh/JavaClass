@@ -4,15 +4,17 @@ public class TakeOutProject {
 
     static int feeds;
     static double price;
-
-
     static Scanner scanner=new Scanner(System.in);
 
     public static void displayChineseFoodMenu(){
         System.out.println("Which food tray would you like to order? ");
         System.out.println("1. Chicken and Broccoli Tray (includes 7 wonton soups, 7 egg rolls) \n2. Sweet and Sour Pork Tray (includes 7 hot and sour soups, 7 egg rolls\n3. Shrimp Fried Rice Tray (includes 10 egg rolls)");
         int foodTray=scanner.nextInt();
-        if(foodTray ==1){
+        while (foodTray>4 || foodTray<1) {
+            System.out.println("Invalid Number, enter number again: ");
+            foodTray = scanner.nextInt();
+        }
+            if(foodTray ==1){
             feeds=7;
             price=18.99;
 
@@ -30,6 +32,10 @@ public class TakeOutProject {
         System.out.println("Which food tray would you like to order? ");
         System.out.println("1. Lasagna Tray \n2. Pizza Pack \n3. Gazpacho Soup, salad and bread sticks pack");
         int foodTray = scanner.nextInt();
+        while (foodTray>4 || foodTray<1) {
+            System.out.println("Invalid Number, enter number again: ");
+            foodTray = scanner.nextInt();
+        }
         if (foodTray == 1) {
             feeds += 5;
             price = 17.99;
@@ -49,20 +55,30 @@ public class TakeOutProject {
         System.out.println("Which food tray would you like to order? ");
         System.out.println("1. Hamburger and Hot Dog Tray - includes buns and condiments\n2. Grilled Chicken Sandwich and Mozzarella Sticks Tray - includes dipping sauces\n3. Barbeque Tray - includes buns and peach cobbler ");
         int foodTray = scanner.nextInt();
-        if (foodTray == 1) {
-            feeds = 8;
-            price = 21.99;
-        } else if (foodTray == 2) {
-            feeds = 5;
-            price = 22.99;
-        } else {
-            feeds = 10;
-            price = 26.99;
+        while (foodTray>4 || foodTray<1) {
+            System.out.println("Invalid Number, enter number again: ");
+            foodTray = scanner.nextInt();
         }
+            if (foodTray == 1) {
+                System.out.println("1 selected");
+                feeds = 8;
+                price = 21.99;
+            } else if (foodTray == 2) {
+                feeds = 5;
+                price = 22.99;
+            } else  if(foodTray==3){
+                feeds = 10;
+                price = 26.99;
+            }
+
+
         choices();
+
+
     }
+
     public static int determineTrays(int people, int feeds){
-        if(people>=100){
+        if(people>=100 || people<10){
             System.out.println("Number of people are invalid");
             System.exit(0);
         }
@@ -93,7 +109,7 @@ public class TakeOutProject {
 
     public static int determineLeftOvers(int feeds, int trays, int people){
         int leftOver;
-            return leftOver= trays*feeds-people;
+        return leftOver= trays*feeds-people;
     }
 
     public static void choices(){
@@ -117,5 +133,4 @@ public class TakeOutProject {
 
 
 
-    }
-
+}

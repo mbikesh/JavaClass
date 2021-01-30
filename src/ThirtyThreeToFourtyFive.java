@@ -1,9 +1,10 @@
 import java.io.FileWriter;
 import java.io.IOException;
+import java.nio.Buffer;
 import java.util.Scanner;
-
+import java.io.*;
 public class ThirtyThreeToFourtyFive {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         reverseArray();
 
         int num[] = {1, 2, 3, 4, 5};
@@ -245,7 +246,7 @@ public class ThirtyThreeToFourtyFive {
 
     //44.	Write a program to store the name and address of 10 students in file and search address by given name.
 
-    public static void storeNames() {
+    public static void storeNames() throws IOException {
         try {
             String filePath = "C:\\Users\\User-\\Desktop\\data.txt";
 
@@ -254,7 +255,7 @@ public class ThirtyThreeToFourtyFive {
             String name = null;
             String address = null;
             String newLine = System.getProperty("line.separator");
-            for (int i = 0; i < 2; i++) {
+            for (int i = 0; i <=10; i++) {
                 System.out.println("Enter name");
                 name = scanner.next();
                 file.write("Name: " + name + newLine);
@@ -267,13 +268,44 @@ public class ThirtyThreeToFourtyFive {
             e.printStackTrace();
         }
 
+
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter name of student: ");
+        String sName=scanner.nextLine();
+        BufferedReader bufferReader=null;
+        try{
+            bufferReader=new BufferedReader(new FileReader("C:\\Users\\User-\\Desktop\\data.txt"));
+
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+        try{
+            String line;
+            while (true){
+                assert bufferReader!=null;
+                if(!(((line=bufferReader.readLine())) !=null))
+                    break;
+                String name=line.substring(0,line.indexOf(" "));
+                if(name.equals(sName)){
+                    System.out.println(line);
+                }
+            }
+        }catch (IOException e){
+            e.printStackTrace();
+
+        }finally {
+            bufferReader.close();
+        }
     }
+
+
+
     //45.	Write a program to find the duplicate name (word) in a file.
 
     public static void duplicateWords(String sentenceI) {
 
         try {
-            String filePath = "C:\\Users\\User-\\Desktop\\data1.txt";
+            String filePath = "data1.txt";
             String newLine = System.getProperty("line.separator");
 
             FileWriter file = new FileWriter(filePath);

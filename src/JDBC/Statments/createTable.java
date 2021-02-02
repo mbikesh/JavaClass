@@ -1,6 +1,7 @@
 package JDBC.Statments;
 
-import util.DbUtil;
+
+import JDBC.util.DbUtil;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

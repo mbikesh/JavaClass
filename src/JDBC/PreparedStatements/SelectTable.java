@@ -1,6 +1,7 @@
 package JDBC.PreparedStatements;
 
-import util.DbUtil;
+
+import JDBC.util.DbUtil;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;

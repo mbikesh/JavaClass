@@ -1,14 +1,12 @@
 package JDBC.PreparedStatements;
 
-
 import JDBC.util.DbUtil;
 
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
-import java.sql.Statement;
 
-public class InsertTable {
-    public static final String SQL="insert into demo_tbl(user_name,password,email,phone) VALUES (?,?,?,?)";
+public class AlterTable {
+    public static final String SQL="alter table demo_tbl add phone int (20)";
 
     public static void main(String[] args) {
         try (
@@ -16,13 +14,11 @@ public class InsertTable {
                 PreparedStatement preparedStatement= DbUtil.getConnection().prepareStatement(SQL);
 
         ){
-            preparedStatement.setString(1,"userName");
-            preparedStatement.setString(2,"pass");
-            preparedStatement.setString(3,"Email");
-            preparedStatement.setInt(4,12321321);
+
+
             preparedStatement.executeUpdate();
 
-            System.out.println("Data Inserted");
+            System.out.println("Phone added");
 
 
         } catch (SQLException | ClassNotFoundException e) {

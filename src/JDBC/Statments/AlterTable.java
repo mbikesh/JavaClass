@@ -5,9 +5,8 @@ import JDBC.util.DbUtil;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-public class InsertTable {
-
-    public static final String SQL="insert into demo_tbl(user_name,password) VALUES ('Name','Pass')";
+public class AlterTable {
+    public static final String SQL="alter table demo_tbl add email varchar(255)";
 
     public static void main(String[] args) {
         try (
@@ -17,7 +16,7 @@ public class InsertTable {
 
         ){
             statement.executeUpdate(SQL);
-            System.out.println("Data Inserted");
+            System.out.println("Email added");
 
 
         } catch (SQLException | ClassNotFoundException e) {

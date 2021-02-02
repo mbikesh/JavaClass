@@ -1,6 +1,7 @@
 package JDBC.Statments;
 
-import util.DbUtil;
+
+import JDBC.util.DbUtil;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
